@@ -1,0 +1,65 @@
+<!-- <pre>
+	{{ blogPosts$ | async | json }}
+</pre> -->
+<section class="lg:max-w-[90vw] justify-center mx-auto py-[3rem]">
+  <div class="grid md:grid-cols-5 sm:grid-cols-1 gap-4">
+    <div class="md:col-span-4 sm:col-span-1 p-4">
+      <h2 class="text-4xl font-semibold mb-[2rem]">Blogs</h2>
+      <div
+        class="grid lg:grid-cols-3 md:grid-cols-2 gap-4"
+        *ngIf="blogPosts$ | async as blogPosts"
+      >
+        <div
+          class="flex"
+          *ngFor="let blogPost of blogPosts.items; let i = index"
+        >
+          <div
+            class="flex flex-col gap-4 border-2 rounded shadow-sm overflow-hidden"
+          >
+            <img
+              class="max-h-[30vh] w-[100%] aspect-video hover:scale-105 transition-all duration-300 ease-in-out"
+              [src]="blogPost.fields.featuredImage.fields.file.url"
+              [alt]="blogPost.fields.featuredImage.fields.title"
+            />
+            <div class="flex-grow pb-4 px-4 flex flex-col justify-between">
+              <div>
+                <h3 class="text-xl font-semibold text-slate-800 pb-4">
+                  {{ blogPost.fields.title }}
+                </h3>
+                <p class="text-sm text-neutral-800">
+                  {{ blogPost.fields.summary }}
+                </p>
+              </div>
+              <div class="pt-1">
+                <hr />
+                <span class="flex flex-row justify-between mt-2 px-1">
+                  <p class="text-sm text-neutral-600">
+                    {{ blogPost.sys.createdAt | date : "mediumDate" }}
+                  </p>
+                  <p class="text-sm text-slate-800">
+                    {{ blogPost.fields.author }}
+                  </p>
+                </span>
+                <!-- <hr />
+                <button
+                  class="text-white px-10 py-2 rounded bg-slate-800"
+                  routerLink="/admin"
+                  routerLinkActive="admin"
+                >
+                  Admin
+                </button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-auto">
+      <div
+        class="md:col-span-1 sm:col-span-1 p-4 md:block lg:rounded lg:shadow-md"
+      >
+        Sidebar
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<header
+  class="flex flex-row justify-between px-8 py-2 bg-slate-400 min-h-[8vh] sticky"
+>
+  <div class="w-[220px] flex items-center">
+    <a href="/">
+      <img src="{{ logo }}" alt="" />
+    </a>
+  </div>
+  <div class="flex flex-row px-4 gap-[3rem]">
+    <div class="flex items-center gap-[2rem]">
+      <span class="cursor-pointer" routerLink="/blogs" routerLinkActive="active"
+        >All Blogs</span
+      >
+      <span
+        class="cursor-pointer"
+        routerLink="/contact"
+        routerLinkActive="active"
+        >Contact Us</span
+      >
+    </div>
+    <div class="flex flex-row items-center">
+      <button
+        class="text-white px-10 py-2 rounded bg-slate-800"
+        routerLink="/admin"
+        routerLinkActive="admin"
+      >
+        Admin
+      </button>
+    </div>
+  </div>
+</header>
