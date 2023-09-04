@@ -11,4 +11,6 @@ export const routes: Routes = [
 	{ path: 'blogs/:id', component: BlogDetailComponent },
 	{ path: 'contact', component: FooterComponent },
 	{ path: 'admin', component: AdminComponent },
+	{ path: '**', component: BlogComponent },
+
 ];

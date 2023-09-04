@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
+  currentYear = new Date().getFullYear();
 
 }
